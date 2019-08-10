@@ -1,0 +1,30 @@
+{mainQuestion} Let me know if it’s {choice1} or {choice2}.
+{mainQuestion} Tell me if it’s {choice1} or {choice2}.
+{mainQuestion} Select whether {choice1} or {choice2} is valid.
+{mainQuestion} Figure out whether {choice1} is true or if {choice2} is.
+{mainQuestion} Is {choice1} or {choice2} correct?
+{mainQuestion} Is it {choice1} or is it {choice2}?
+{mainQuestion} Decide between {choice1} and {choice2}.
+{mainQuestion} Between {choice1} and {choice2}, say which is right.
+{mainQuestion} Is it {choice1} or {choice2} that should be selected?
+{mainQuestion} Does {choice1} or {choice2} answer it? Choose one.
+{mainQuestion} Between {choice1} and {choice2}, decide on one.
+{mainQuestion} Could it be {choice1} or {choice2}?
+{mainQuestion} If you had to pick one answer, would it be {choice1}, or would it be {choice2}?
+{mainQuestion}, {choice1} or possibly {choice2}?
+{mainQuestion} Choose: i. {choice2} ii. {choice1}.
+{mainQuestion} It is either {choice1} or {choice2}. Decide.
+{mainQuestion} {choice1} and {choice2} are your two options.
+{mainQuestion} {choice1} or {choice2}? Make up your mind.
+{mainQuestion} One of two options: Either A: {choice1}, or B: {choice2}.
+Is it {choice1} or {choice2} that answers: {mainQuestion}
+{mainQuestion} Would you say it is {choice1} or {choice2}?
+{mainQuestion} Is the correct response {choice1} or {choice2}?
+{choice1} or {choice2} -- {mainQuestion}
+{mainQuestion} Is {choice1} or {choice2} the one answer?
+Does {choice2} or {choice1} answer {mainQuestion}?
+{mainQuestion} -- Options: {choice1}, {choice2}?
+{mainQuestion} Will the answer be {choice1} or {choice2}?
+{mainQuestion} Make a decision between {choice1} or {choice2}.
+Your options are {choice1} or {choice2} for the question: {mainQuestion}
+{mainQuestion} {choice1} is an option. {choice2} is the other.
