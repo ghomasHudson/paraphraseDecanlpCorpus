@@ -1,0 +1,186 @@
+<html><body>
+
+<!--
+#############################################
+## Amazon Turk layout
+#############################################
+-->
+
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<style>
+    body{
+        background-color: #444444;
+        background: repeating-linear-gradient(
+            45deg,
+            #222222,
+            #222222 3px,
+            #111111 3px,
+            #111111 6px
+);
+    }
+    p{
+        margin-bottom:0.5em !important;
+    }
+    .container{
+        background: white;
+    }
+    .imagecontainer{
+        height:600px;
+        width: auto;
+    }
+    h1 { font-size: 1.8em !important; }
+    h2 {font-size:1.3em !important;}
+    form {font-size:1em !important}
+</style>
+
+<div class="container clearfix" style="height: 100vh !important;overflow:auto !important">
+<div class="card">
+    <div class="card-header" style="background-color:#9999AA"><b>Instructions</b></div>
+    <div class="card-body" style="padding-bottom:0;padding-top:10px;background-color:#DDDDEE">
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+<p>Imagine a computer program which can be asked to do various language tasks by providing it with a prompt (a question or command) and some text to work on:</p>
+<p style="text-align:center">
+    <img src="${imageUrl}"/>
+</p>
+
+<p>To improve the program we want to ask it the same thing in lots of different ways - we need to paraphrase the prompt!</p>
+
+<h2>Your task is</h2>
+<ul>
+    <li>Read a sample prompt carefully</li>
+    <li><b>Create 5 paraphrases</b> of the prompt (a paraphrase is an alternative wording of the prompt that preserves its meaning)</li>
+    <li>Hint: Example paraphrases will be provided to help you.</li>
+</ul>
+</div>
+</div>
+<br>
+<h1>HIT</h1>
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects" class="clearfix">
+<p>Imagine our language task is that we want the computer program to ${context}.</p>
+
+<p>Give 5 paraphrases of the following prompt:</p>
+
+<div class="card">
+  <div class="card-header">
+    Prompt
+  </div>
+  <div class="card-body" style="text-align:center">
+    <b>"${prompt}"</b>
+  </div>
+</div>
+<br>
+<p style="font-size:1em"><i>Example paraphrases:
+${examples}
+</i></p>
+<hr>
+<strong>Answer here:</strong>
+    <crowd-input name="para1" placeholder="Type a paraphrase of the prompt here" required></crowd-input>
+    <crowd-input name="para2" placeholder="Type a different paraphrase of the prompt here" required></crowd-input>
+    <crowd-input name="para3" placeholder="Type a different paraphrase of the prompt here" required/></crowd-input>
+    <crowd-input name="para4" placeholder="Type a different paraphrase of the prompt here" required/></crowd-input>
+    <crowd-input name="para5" placeholder="Type a different paraphrase of the prompt here" required/></crowd-input>
+
+
+<div id="errors"></div>
+
+<script>
+
+function findDuplicates(data) {
+  let result = [];
+  data.forEach(function(element, index) {
+    // Find if there is a duplicate or not
+    if (data.indexOf(element, index + 1) > -1) {
+      // Find if the element is already in the result array or not
+      if (result.indexOf(element) === -1) {
+        result.push(element);
+      }
+    }
+  });
+  return result;
+}
+
+
+$( document ).ready(function() {
+
+//$(".container").height($(document).outerHeight())
+
+function normalise(s){
+    s = s.toLowerCase()
+    s = s.trim()
+    s = s.replace(/[^A-Za-z0-9\s]/g,"").replace(/\s{2,}/g, " ")
+    return s
+}
+
+function validate(){
+    var values=[];
+
+    //Get list of examples
+    var exampleStr = "${examples}"
+    //exampleStr = "''What is the translation from English to German?'' ''What will be the translation to German from English?'' ''What is the conversion of English quote into one in German?''"
+    var examples = exampleStr.split("'' ''")
+    for (var i=0;i<examples.length;i++){
+        examples[i] = normalise(examples[i])
+    }
+    //var examples = ["example1","eg2"]
+
+    //Get question
+    var questionStr = normalise("${prompt}")
+
+    //Get all inputs
+    $("input").each(function(){
+        values.push(normalise($(this).val()));
+    });
+
+    //reset
+    $("#errors").empty()
+    $("button").removeClass("awsui-button-disabled")
+    var disable = false;
+    $("button").attr("disabled", false);
+
+    //Are there Duplicates?
+    var dup = findDuplicates(values);
+    for (var i=0;i<values.length;i++){
+        if (dup[i]!="" && dup[i]!=null){
+            $("#errors").append("<div class='alert alert-danger' role='alert'><i class='fas fa-exclamation-triangle'></i> You used the paraphrase: '"+dup[i]+"' more than once! Make all paraphrases different.</div>")
+            disable = true;
+        }
+    }
+
+    for (var i=0;i<values.length;i++){
+        var valNorm = normalise(values[i])
+
+        //Did they copy the question?
+        if(valNorm==questionStr){
+            $("#errors").append("<div class='alert alert-danger' role='alert'><i class='fas fa-exclamation-triangle'></i> You copied the original question! Please paraphrase it.</div>")
+            disable = true;
+        }
+
+        //Did they copy the examples?
+        if ($.inArray(valNorm,examples) > -1){
+            $("#errors").append("<div class='alert alert-danger role='alert'><i class='fas fa-exclamation-triangle'></i> You copied one of the example paraphrases: '"+values[i]+"'! Please create your own. </div>")
+            disable = true;
+        }
+    }
+
+
+
+    //If so make the buttom look disabled
+    if (disable){
+        $("button").addClass("awsui-button-disabled");
+        $("button").attr("disabled", true);
+    }
+
+}
+
+setInterval(function() {validate() }, 1000);
+});
+</script>
+</crowd-form>
+</div>
+</body></html>
