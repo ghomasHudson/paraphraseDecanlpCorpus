@@ -1,11 +1,11 @@
+#!/bin/bash
 # Shell version of makeTraining.py
-
 
 if [ "$#" -ne 2 ]; then
     echo "Usage: $0 INTPUT_DIR OUTPUT_DIR"
     echo
     echo "  Arguments:"
-    echo "      INTPUT_DIR: directory containing full corpus from makeCorpus.py"
+    echo "      INPUT_DIR: directory containing full corpus from makeCorpus.py"
     echo "      OUTPUT_DIR: directory to output training corput"
     echo
     exit 1
