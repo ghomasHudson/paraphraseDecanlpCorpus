@@ -39,3 +39,11 @@ outputFolder/
 ```
 
 `makeTrain.sh` will randomly select a question for every datapoint in the training corpus.
+
+## Annotated data
+
+`annotated.json` contains paraphrase annotations for each of the examples in the test set.
+
+## Trained T5 checkpoints
+
+Checkpoints for the T5 checkpoints to evaluate this corpus are [here](https://drive.google.com/drive/folders/1RbIrGzfj0LUQ_qGCEVsyUyIf3y3pB3y6?usp=sharing)
