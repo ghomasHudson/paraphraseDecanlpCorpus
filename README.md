@@ -13,7 +13,7 @@ Dataset for the paper [Ask me in your own words: paraphrasing for multitask ques
 ## Using with the decaNLP code
 The `templates` folder contains the question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
 
-To use the dataset with decaNLP, you first need to slightly modify the decaNLP code to dump the task data as jsonl files. First apply the patch:
+To use the dataset with decaNLP, you first need to slightly modify the [decaNLP code](https://github.com/salesforce/decaNLP) to dump the task data as jsonl files. First apply the patch:
 ```
 git clone https://github.com/salesforce/decaNLP
 cd decaNLP
