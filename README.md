@@ -90,7 +90,7 @@ This repository contains question templates and scripts for using this with the 
   </tr>
   <tr>
     <td>citation</td>
-    <td><code itemprop="citation">https://peerj.com/articles/cs-759</code></td>
+    <td><code itemprop="citation">https://doi.org/10.7717/peerj-cs.759</code></td>
   </tr>
     
   <tr>
