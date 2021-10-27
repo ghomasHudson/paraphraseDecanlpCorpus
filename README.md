@@ -1,4 +1,4 @@
-# paraphraseDecanlpCorpus
+# PQ-decaNLP
 Paraphrases of [decaNLP](https://github.com/salesforce/decaNLP) questions. E.g.
 ```
 What is the synopsis?
