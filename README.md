@@ -75,6 +75,10 @@ engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
     <td><code itemprop="alternateName">Paraphrase Questions - decaNLP</code></td>
   </tr>
   <tr>
+    <td>name</td>
+    <td><code itemprop="name">PQ-decaNLP</code></td>
+  </tr>
+  <tr>
     <td>url</td>
     <td><code itemprop="url">https://github.com/ghomasHudson/paraphraseDecanlpCorpus</code></td>
   </tr>
@@ -87,6 +91,27 @@ This repository contains question templates and scripts for using this with the 
   <tr>
     <td>citation</td>
     <td><code itemprop="citation">https://peerj.com/articles/cs-759</code></td>
+  </tr>
+  <tr>
+    <td>license</td>
+    <td>
+      <div itemscope itemtype="http://schema.org/CreativeWork" itemprop="license">
+        <table>
+          <tr>
+            <th>property</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td><code itemprop="name">MIT</code></td>
+          </tr>
+          <tr>
+            <td>url</td>
+            <td><code itemprop="url">https://github.com/ghomasHudson/paraphraseDecanlpCorpus/blob/master/LICENSE</code></td>
+          </tr>
+        </table>
+      </div>
+    </td>
   </tr>
 </table>
 </div>
