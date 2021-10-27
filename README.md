@@ -50,7 +50,7 @@ Each set can be then used for training/evaluating individually, or can be merged
 
 ## Trained T5 checkpoints
 
-Checkpoints for the T5 checkpoints to evaluate this corpus are [here](https://drive.google.com/drive/folders/1RbIrGzfj0LUQ_qGCEVsyUyIf3y3pB3y6?usp=sharing)
+Checkpoints for the T5 checkpoints to evaluate this corpus are [here](https://drive.google.com/drive/folders/1RbIrGzfj0LUQ_qGCEVsyUyIf3y3pB3y6?usp=sharing).
 
 ## Citation
 If you use this dataset in your work, please cite:
