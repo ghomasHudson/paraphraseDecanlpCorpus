@@ -57,6 +57,8 @@ If you use this dataset in your work, please cite:
 } 
 ```
 
+The dataset in this project (files under the `templates/` dir and the `annotation.json` file) is licensed under the [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/), and the underlying source code used to create and process that data is licensed under the [MIT](https://github.com/github/choosealicense.com/blob/gh-pages/LICENSE.md).
+
 ### Dataset Metadata
 The following table is necessary for this dataset to be indexed by search
 engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
