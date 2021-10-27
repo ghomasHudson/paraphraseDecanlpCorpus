@@ -46,7 +46,7 @@ Each set can be then used for training/evaluating individually, or can be merged
 
 ## Annotated data
 
-`annotated.json` contains paraphrase annotations for each of the examples in the test set.
+`annotated.json` contains paraphrase annotations for each of the examples in the test set with the types of paraphrase phenomena used (See the [paper](https://peerj.com/articles/cs-759) for full details). 
 
 ## Trained T5 checkpoints
 
