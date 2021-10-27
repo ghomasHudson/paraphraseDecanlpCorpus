@@ -1,7 +1,7 @@
 # paraphraseDecanlpCorpus
-Paraphrases of the decanlp questions gathered from Amazon Mechanical Turk
+Paraphrases of the decanlp questions gathered from Amazon Mechanical Turk.
 
-## Recreating the data
+## Using with the decaNLP code
 The `templates` folder contains the question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
 
 To use the dataset with decaNLP, you first need to slightly modify the decaNLP code to dump the task data as jsonl files. First apply the patch:
@@ -33,6 +33,7 @@ outputFolder/
     │    └── val.jsonl
     ...
 ```
+These can be used as custom training/evaluation files in decaNLP.
 
 ## Annotated data
 
