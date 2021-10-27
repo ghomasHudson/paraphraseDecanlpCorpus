@@ -1,5 +1,14 @@
 # paraphraseDecanlpCorpus
-Paraphrases of the decanlp questions gathered from Amazon Mechanical Turk.
+Paraphrases of [decaNLP](https://github.com/salesforce/decaNLP) questions. E.g.
+```
+What is the synopsis?
+Give me a condensed version
+Sum up the article
+What would be a good summary of the article?
+Sum it up
+```
+
+Dataset for the paper [Ask me in your own words: paraphrasing for multitask question answering](https://peerj.com/articles/cs-759).
 
 ## Using with the decaNLP code
 The `templates` folder contains the question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
