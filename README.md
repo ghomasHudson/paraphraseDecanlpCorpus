@@ -42,3 +42,51 @@ Each set can be then used for training/evaluating individually, or can be merged
 ## Trained T5 checkpoints
 
 Checkpoints for the T5 checkpoints to evaluate this corpus are [here](https://drive.google.com/drive/folders/1RbIrGzfj0LUQ_qGCEVsyUyIf3y3pB3y6?usp=sharing)
+
+## Citation
+If you use this dataset in your work, please cite:
+```
+@article{hudson2021askme,
+ title = {Ask me in your own words: paraphrasing for multitask question answering}
+ author = {G. Thomas Hudson and Noura Al Moubayed},
+ doi = {10.7717/peerj-cs.759},
+ year = 2021,
+ publisher = {{PeerJ}},
+ volume = {7},
+ pages = {e759},
+} 
+```
+
+### Dataset Metadata
+The following table is necessary for this dataset to be indexed by search
+engines such as <a href="https://g.co/datasetsearch">Google Dataset Search</a>.
+<div itemscope itemtype="http://schema.org/Dataset">
+<table>
+  <tr>
+    <th>property</th>
+    <th>value</th>
+  </tr>
+  <tr>
+    <td>name</td>
+    <td><code itemprop="name">PQ-decaNLP</code></td>
+  </tr>
+  <tr>
+    <td>alternateName</td>
+    <td><code itemprop="alternateName">Paraphrase Questions - decaNLP</code></td>
+  </tr>
+  <tr>
+    <td>url</td>
+    <td><code itemprop="url">https://github.com/ghomasHudson/paraphraseDecanlpCorpus</code></td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td><code itemprop="description">Multitask learning has led to significant advances in Natural Language Processing, including the decaNLP benchmark where question answering is used to frame 10 natural language understanding tasks in a single model. PQ-decaNLP is a crowd-sourced corpus of paraphrased questions, annotated with paraphrase phenomena. This enables analysis of how transformations such as swapping the class labels and changing the sentence modality lead to a large performance degradation.
+      
+This repository contains question templates and scripts for using this with the decaNLP code.</code></td>
+  </tr>
+  <tr>
+    <td>citation</td>
+    <td><code itemprop="citation">https://peerj.com/articles/cs-759</code></td>
+  </tr>
+</table>
+</div>
