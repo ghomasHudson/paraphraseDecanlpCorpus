@@ -33,7 +33,7 @@ outputFolder/
     │    └── val.jsonl
     ...
 ```
-These can be used as custom training/evaluation files in decaNLP.
+Each set can be then used for training/evaluating individually, or can be merged together using `makeTraining.sh` to make a single training set per task based on picking a random paraphrase for each training instance.
 
 ## Annotated data
 
