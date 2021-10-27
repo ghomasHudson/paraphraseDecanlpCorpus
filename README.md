@@ -1,34 +1,23 @@
 # paraphraseDecanlpCorpus
 Paraphrases of the decanlp questions gathered from Amazon Mechanical Turk
 
-## Usage
+## Recreating the data
 The `templates` folder contains the question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
 
-To use these with decaNLP you need to modify the code to save the data to jsonl files. The `Patches` folder contains modifications for the decaNLP code (tested with commit hash `1e9605f246b9e05199b28bde2a2093bc49feeeaa`)
-
-To evaluate decaNLP on the paraphrase test set, first apply the patch:
+To use the dataset with decaNLP, you first need to slightly modify the decaNLP code to dump the task data as jsonl files. First apply the patch:
 ```
 git clone https://github.com/salesforce/decaNLP
 cd decaNLP
 git apply ../save_jsonl.patch 
 ```
 
-Then run:
+Then follow the decaNLP instructions to run the `train.py`/`evaluate.py` scripts (just to download the data for the first time). In the `decaNLP/.data` directory you should now also have `.jsonl` files containing `question`, `context`, `answer` keys.
 
-`./evaluatePara.sh outputFolder/test`
-(You can append any of decanlp's predict.py options too)
-
-This will repeatedly run `python predict.py` specifying the correct metrics (you could also modify predict.py to include this logic)
-
-To train on the paraphrase training set, specify the data path:
-
-`python train.py --data outputFolder/train`...
-
-## Recreating the data
-To use the dataset with decaNLP, you first need to slightly modify the decanlp code to dump the task data as jsonl files.
-
-Then run `makeCorpus.py` which will expand out the jsonl file for each task with the paraphrase questions. You'll end up with the following structure:
-
+Running:
+```
+python makeCorpus.py --data decaNLP/.data --templates templates/ --output paraphrase_corpus
+```
+will expand the templates using the decaNLP data. You'll end up with the following structure:
 ```
 outputFolder/
 ├── train/
@@ -44,8 +33,6 @@ outputFolder/
     │    └── val.jsonl
     ...
 ```
-
-`makeTrain.sh` will randomly select a question for every datapoint in the training corpus.
 
 ## Annotated data
 
