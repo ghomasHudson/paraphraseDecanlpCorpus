@@ -92,6 +92,29 @@ This repository contains question templates and scripts for using this with the 
     <td>citation</td>
     <td><code itemprop="citation">https://peerj.com/articles/cs-759</code></td>
   </tr>
+    
+  <tr>
+    <td>creator</td>
+    <td>
+      <div itemscope itemtype="http://schema.org/Person" itemprop="creator">
+        <table>
+          <tr>
+            <th>property</th>
+            <th>value</th>
+          </tr>
+          <tr>
+            <td>name</td>
+            <td><code itemprop="name">Thomas Hudson</code></td>
+          </tr>
+          <tr>
+            <td>sameAs</td>
+            <td><code itemprop="sameAs">https://orcid.org/0000-0003-3562-3593</code></td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+
   <tr>
     <td>license</td>
     <td>
