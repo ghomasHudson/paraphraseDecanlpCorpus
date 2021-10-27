@@ -2,11 +2,18 @@
 Paraphrases of the decanlp questions gathered from Amazon Mechanical Turk
 
 ## Usage
-The `templates` folder contains the raw question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
+The `templates` folder contains the question paraphrases gathered from mechanical turk, one-per-line. These have already been split 70:30 into train/test sets.
 
-To use these with decaNLP you need to modify the code to read extra arguments from jsonl files. The `Patches` folder contains modifications for the decaNLP code (tested with commit hash `1e9605f246b9e05199b28bde2a2093bc49feeeaa`)
+To use these with decaNLP you need to modify the code to save the data to jsonl files. The `Patches` folder contains modifications for the decaNLP code (tested with commit hash `1e9605f246b9e05199b28bde2a2093bc49feeeaa`)
 
-To evaluate decaNLP on the paraphrase test set run:
+To evaluate decaNLP on the paraphrase test set, first apply the patch:
+```
+git clone https://github.com/salesforce/decaNLP
+cd decaNLP
+git apply ../save_jsonl.patch 
+```
+
+Then run:
 
 `./evaluatePara.sh outputFolder/test`
 (You can append any of decanlp's predict.py options too)
