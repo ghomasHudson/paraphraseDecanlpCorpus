@@ -103,11 +103,11 @@ This repository contains question templates and scripts for using this with the 
           </tr>
           <tr>
             <td>name</td>
-            <td><code itemprop="name">MIT</code></td>
+            <td><code itemprop="name">CC BY 4.0</code></td>
           </tr>
           <tr>
             <td>url</td>
-            <td><code itemprop="url">https://github.com/ghomasHudson/paraphraseDecanlpCorpus/blob/master/LICENSE</code></td>
+            <td><code itemprop="url">https://creativecommons.org/licenses/by/4.0/</code></td>
           </tr>
         </table>
       </div>
